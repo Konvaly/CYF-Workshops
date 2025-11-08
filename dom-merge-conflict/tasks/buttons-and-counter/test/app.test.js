@@ -35,22 +35,22 @@ describe("button and counter", () => {
     expect(getByTestId(container, "counter")).toHaveTextContent(/^2$/);
   });
 
-  // describe.skip("decrement button", () => {
-  //   test("pressing Decrement decreases the counter", () => {
-  //     const button = getByRole(container, "button", {
-  //       name: "Decrement",
-  //     });
-  //     button.click();
-  //     button.click();
-  //     button.click();
+  describe("decrement button", () => {
+    test("pressing Decrement decreases the counter", () => {
+      const button = getByRole(container, "button", {
+        name: "Decrement",
+      });
+      button.click();
+      button.click();
+      button.click();
 
-  //     expect(getByTestId(container, "counter")).toHaveTextContent(/^-3$/);
-  //   });
+      expect(getByTestId(container, "counter")).toHaveTextContent(/^-3$/);
+    });
 
-  //   test("contains description paragraph with mention of 'decrement' in header", () => {
-  //     expect(
-  //       container.querySelector("header").querySelector("p")
-  //     ).toHaveTextContent(/decrement/i);
-  //   });
-  // });
+    test("contains description paragraph with mention of 'decrement' in header", () => {
+      expect(
+        container.querySelector("header").querySelector("p")
+      ).toHaveTextContent(/decrement/i);
+    });
+  });
 });
